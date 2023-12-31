@@ -85,9 +85,22 @@ function App() {
       {votes.length > 0 && (
         <>
           <div className="statsHeader">
-            {address.slice(0, 3)}...{address.slice(-3)} allocated{' '}
-            {totalVoteWeight(votes)} votes across {uniqueProps(votes)} proposals
-            in 2023
+            <div>
+              {address.slice(0, 3)}...{address.slice(-3)} allocated{' '}
+              {totalVoteWeight(votes)} votes across {uniqueProps(votes)}{' '}
+              proposals in 2023
+            </div>
+            <a
+              className="shareBtn"
+              onClick={() => {
+                window.open(
+                  `https://twitter.com/intent/tweet?text=Check out my activity on Prop House activty during 2023: https://prophousewrapped.com/${address}`,
+                  `_blank`
+                );
+              }}
+            >
+              Share ↗
+            </a>
           </div>
         </>
       )}

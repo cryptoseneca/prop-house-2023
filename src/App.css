@@ -42,3 +42,11 @@
   font-size: 20px;
   margin-top: 2rem;
 }
+.shareBtn {
+  margin-left: 12px;
+  color: rgb(92, 92, 237);
+  text-decoration: underline;
+}
+.shareBtn:hover {
+  cursor: pointer;
+}
