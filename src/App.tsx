@@ -68,7 +68,10 @@ function App() {
         className="logo"
         alt="prop-house-bulb"
       />
-      <div className="header">View your activity on Prop House for 2023</div>
+      <div className="header">
+        View your activity on <a href="https://prop.house">Prop House</a> for
+        2023
+      </div>
       <div className="inputcontainer">
         <input
           type="text"
@@ -82,7 +85,7 @@ function App() {
         />
       </div>
       {loading && <div className="loading">Loading...</div>}
-      {votes.length > 0 && (
+      {votes.length > 0 && isAddress(inputValue) && (
         <>
           <div className="statsHeader">
             <div>
@@ -107,6 +110,7 @@ function App() {
 
       <div className="votesContainer">
         {votes.length > 0 &&
+          isAddress(inputValue) &&
           votes.map((vote) => {
             return (
               <div>
