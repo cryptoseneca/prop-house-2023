@@ -1,10 +1,16 @@
-import { useEffect, useState } from 'react';
 import './App.css';
-import { isAddress } from 'viem';
 import Main from './Main';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
-  return <Main />;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/:address" element={<Main />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;

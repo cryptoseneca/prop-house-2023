@@ -108,9 +108,9 @@ const Main = () => {
       <div className="votesContainer">
         {votes.length > 0 &&
           isAddress(inputValue) &&
-          votes.map((vote) => {
+          votes.map((vote, i) => {
             return (
-              <div>
+              <div key={i}>
                 <b>
                   {vote.weight} vote{vote.weight > 1 ? 's' : ''}
                 </b>{' '}
