@@ -3,9 +3,13 @@ import './App.css';
 import { isAddress } from 'viem';
 
 function App() {
-  const [address, setAddress] = useState<string>('');
+  const currentUrl = window.location.href;
+  const firstParamValue = currentUrl.split('/').pop();
+
+  const [address, setAddress] = useState<string>(firstParamValue ?? '');
   const [votes, setVotes] = useState<any[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
+  const [inputValue, setInputValue] = useState<string>(firstParamValue ?? '');
 
   useEffect(() => {
     if (!isAddress(address)) return;
@@ -70,8 +74,10 @@ function App() {
           type="text"
           className="input"
           placeholder="Enter your address"
+          value={inputValue}
           onChange={(value) => {
             setAddress(value.currentTarget.value);
+            setInputValue(value.currentTarget.value);
           }}
         />
       </div>
@@ -79,8 +85,9 @@ function App() {
       {votes.length > 0 && (
         <>
           <div className="statsHeader">
-            You allocated {totalVoteWeight(votes)} votes across{' '}
-            {uniqueProps(votes)} proposals in 2023
+            {address.slice(0, 3)}...{address.slice(-3)} allocated{' '}
+            {totalVoteWeight(votes)} votes across {uniqueProps(votes)} proposals
+            in 2023
           </div>
         </>
       )}
