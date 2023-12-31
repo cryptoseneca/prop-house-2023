@@ -95,12 +95,9 @@ function App() {
             </div>
             <a
               className="shareBtn"
-              onClick={() => {
-                window.open(
-                  `https://twitter.com/intent/tweet?text=Check out my activity on Prop House activty during 2023: https://prophousewrapped.com/${address}`,
-                  `_blank`
-                );
-              }}
+              href={`https://twitter.com/intent/tweet?text=Check out my activity on Prop House activty during 2023: https://prophousewrapped.com/${address}`}
+              target="_blank"
+              rel="noreferrer"
             >
               Share ↗
             </a>
