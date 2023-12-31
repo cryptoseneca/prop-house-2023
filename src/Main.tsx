@@ -95,7 +95,7 @@ const Main = () => {
             </div>
             <a
               className="shareBtn"
-              href={`https://twitter.com/intent/tweet?text=Check out my activity on Prop House activty during 2023: https://prophousewrapped.com/${address}`}
+              href={`https://twitter.com/intent/tweet?text=Check out my activity @nounsprophouse during 2023: https://prophousewrapped.com/${address}`}
               target="_blank"
               rel="noreferrer"
             >
