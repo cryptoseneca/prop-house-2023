@@ -68,7 +68,8 @@ const Main = () => {
         className="logo"
         alt="prop-house-bulb"
       />
-      <div className="header">
+      <div className="header">Prop House Wrapped</div>
+      <div className="subtitle">
         View your activity on <a href="https://prop.house">Prop House</a> for
         2023
       </div>
@@ -88,19 +89,23 @@ const Main = () => {
       {votes.length > 0 && isAddress(inputValue) && (
         <>
           <div className="statsHeader">
-            <div>
+            <div className="statsTitle">
               {address.slice(0, 3)}...{address.slice(-3)} allocated{' '}
               {totalVoteWeight(votes)} votes across {uniqueProps(votes)}{' '}
               proposals in 2023
             </div>
-            <a
+            <div
               className="shareBtn"
-              href={`https://twitter.com/intent/tweet?text=Check out my activity @nounsprophouse during 2023: https://prophousewrapped.com/${address}`}
-              target="_blank"
+              onClick={() => {
+                window.open(
+                  `https://twitter.com/intent/tweet?text=Check out my activity @nounsprophouse during 2023: https://prophousewrapped.com/${address}`,
+                  `_blank`
+                );
+              }}
               rel="noreferrer"
             >
-              Share ↗
-            </a>
+              Share
+            </div>
           </div>
         </>
       )}
